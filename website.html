@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Tahreem Qadri - Development Team Lead</title>
+    <base target="_self">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@preline/preline@2.0.0/dist/preline.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 11px;
+            top: 24px;
+            height: calc(100% - 24px);
+            width: 2px;
+            background-color: #e5e7eb;
+        }
+        .dark .timeline-item:not(:last-child)::after {
+            background-color: #374151;
+        }
+        .skill-pill:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+    <div class="min-h-screen">
+        <!-- Header/Navigation -->
+        <header class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+            <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16 items-center">
+                    <div class="flex items-center">
+                        <a href="#" class="text-xl font-bold text-primary-600 dark:text-primary-400" onclick="handleNavigation(event, 'hero')">Tahreem Qadri</a>
+                    </div>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" onclick="handleNavigation(event, 'about')">About</a>
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" onclick="handleNavigation(event, 'experience')">Experience</a>
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" onclick="handleNavigation(event, 'contact')">Contact</a>
+                    </div>
+                    <div class="flex items-center">
+                        <button id="theme-toggle" class="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                            <i class="fas fa-moon dark:hidden"></i>
+                            <i class="fas fa-sun hidden dark:inline"></i>
+                        </button>
+                        <button class="md:hidden p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" onclick="toggleMobileMenu()">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Mobile menu -->
+                <div id="mobile-menu" class="hidden md:hidden pb-4 space-y-2">
+                    <a href="#" class="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" onclick="handleNavigation(event, 'about')">About</a>
+                    <a href="#" class="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" onclick="handleNavigation(event, 'experience')">Experience</a>
+                    <a href="#" class="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" onclick="handleNavigation(event, 'contact')">Contact</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="hero" class="py-16 md:py-24 bg-gradient-to-br from-primary-50 to-white dark:from-gray-800 dark:to-gray-900">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2 space-y-6">
+                        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
+                            Mohammad Tahreem Qadri
+                        </h1>
+                        <h2 class="text-2xl md:text-3xl font-semibold text-primary-600 dark:text-primary-400">
+                            Development Team Lead
+                        </h2>
+                        <p class="text-lg text-gray-600 dark:text-gray-300">
+                            Experienced mobile and software development leader with 9+ years in diverse industries.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#" class="px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-colors shadow-md hover:shadow-lg" onclick="handleNavigation(event, 'contact')">
+                                Contact Me
+                            </a>
+                            <a href="#" class="px-6 py-3 border border-primary-600 text-primary-600 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-gray-800 rounded-lg font-medium transition-colors" onclick="handleNavigation(event, 'experience')">
+                                View Experience
+                            </a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="relative">
+                            <div class="w-64 h-64 md:w-80 md:h-80 bg-primary-100 dark:bg-gray-700 rounded-full mx-auto overflow-hidden border-4 border-white dark:border-gray-800 shadow-xl">
+                                <!-- Placeholder for profile image -->
+                                <div class="w-full h-full flex items-center justify-center text-primary-600 dark:text-primary-400">
+                                    <i class="fas fa-user text-8xl"></i>
+                                </div>
+                            </div>
+                            <div class="absolute -bottom-4 -right-4 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
+                                <div class="flex items-center space-x-2">
+                                    <div class="p-2 bg-primary-100 dark:bg-gray-700 rounded-full">
+                                        <i class="fas fa-briefcase text-primary-600 dark:text-primary-400"></i>
+                                    </div>
+                                    <span class="font-medium">9+ Years</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 bg-white dark:bg-gray-900">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Professional Summary</h2>
+                    <div class="w-20 h-1 bg-primary-600 dark:bg-primary-400 mx-auto mt-4"></div>
+                </div>
+                <div class="max-w-3xl mx-auto bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-md">
+                    <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Experienced Development Team Lead with 9+ years in diverse industries, specializing in mobile and software development.
+                        Proven leadership as Team Lead, adept in Kotlin, Java, Swift, and cloud platforms. Strong grasp of Agile methodologies, UI/UX,
+                        and RESTful APIs. Eager to contribute to engineering excellence and innovation.
+                    </p>
+                </div>
+
+                <!-- Skills -->
+                <div class="mt-16">
+                    <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-8 text-center">Technical Skills</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                        <div class="skill-pill bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full px-6 py-3 text-center transition-all duration-300">
+                            <span class="font-medium text-gray-700 dark:text-gray-300">Kotlin</span>
+                        </div>
+                        <div class="skill-pill bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full px-6 py-3 text-center transition-all duration-300">
+                            <span class="font-medium text-gray-700 dark:text-gray-300">Java</span>
+                        </div>
+                        <div class="skill-pill bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full px-6 py-3 text-center transition-all duration-300">
+                            <span class="font-medium text-gray-700 dark:text-gray-300">Swift</span>
+                        </div>
+                        <div class="skill-pill bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full px-6 py-3 text-center transition-all duration-300">
+                            <span class="font-medium text-gray-700 dark:text-gray-300">Android</span>
+                        </div>
+                        <div class="skill-pill bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full px-6 py-3 text-center transition-all duration-300">
+                            <span class="font-medium text-gray-700 dark:text-gray-300">iOS</span>
+                        </div>
+                        <div class="skill-pill bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full px-6 py-3 text-center transition-all duration-300">
+                            <span class="font-medium text-gray-700 dark:text-gray-300">RESTful APIs</span>
+                        </div>
+                        <div class="skill-pill bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full px-6 py-3 text-center transition-all duration-300">
+                            <span class="font-medium text-gray-700 dark:text-gray-300">Agile Methodologies</span>
+                        </div>
+                        <div class="skill-pill bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full px-6 py-3 text-center transition-all duration-300">
+                            <span class="font-medium text-gray-700 dark:text-gray-300">UI/UX</span>
+                        </div>
+                        <div class="skill-pill bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full px-6 py-3 text-center transition-all duration-300">
+                            <span class="font-medium text-gray-700 dark:text-gray-300">Google Cloud</span>
+                        </div>
+                        <div class="skill-pill bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full px-6 py-3 text-center transition-all duration-300">
+                            <span class="font-medium text-gray-700 dark:text-gray-300">Stripe</span>
+                        </div>
+                        <div class="skill-pill bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full px-6 py-3 text-center transition-all duration-300">
+                            <span class="font-medium text-gray-700 dark:text-gray-300">Adyen</span>
+                        </div>
+                        <div class="skill-pill bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full px-6 py-3 text-center transition-all duration-300">
+                            <span class="font-medium text-gray-700 dark:text-gray-300">Payment Gateways</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-16 bg-gray-50 dark:bg-gray-800">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Professional Experience</h2>
+                    <div class="w-20 h-1 bg-primary-600 dark:bg-primary-400 mx-auto mt-4"></div>
+                </div>
+
+                <div class="max-w-3xl mx-auto space-y-8">
+                    <!-- Experience 1 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 top-0 w-6 h-6 rounded-full bg-primary-600 dark:bg-primary-400 border-4 border-white dark:border-gray-800"></div>
+                        <div class="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 fade-in">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">Development Team Lead</h3>
+                                <span class="text-primary-600 dark:text-primary-400 font-medium">Feb 2022 - Present</span>
+                            </div>
+                            <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4">Kayana World</h4>
+                            <ul class="space-y-3 text-gray-600 dark:text-gray-400">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-2"></i>
+                                    <span>Led and coordinated mobile development projects, ensuring code quality and fostering collaboration, which improved team efficiency.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-2"></i>
+                                    <span>Developed and maintained Android and iOS applications using Kotlin and Swift, enhancing user experience and increasing app engagement by 90%.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-2"></i>
+                                    <span>Integrated payment gateways including Stripe and Adyen, streamlining transaction processes and reducing payment processing time.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience 2 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 top-0 w-6 h-6 rounded-full bg-primary-600 dark:bg-primary-400 border-4 border-white dark:border-gray-800"></div>
+                        <div class="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 fade-in">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">Senior Mobile Application Developer</h3>
+                                <span class="text-primary-600 dark:text-primary-400 font-medium">Jul 2021 - Jan 2023</span>
+                            </div>
+                            <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4">Next Order</h4>
+                            <ul class="space-y-3 text-gray-600 dark:text-gray-400">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-2"></i>
+                                    <span>Developed Android applications from scratch using Kotlin, ensuring compatibility across multiple screen sizes and resolutions, enhancing user experience.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-2"></i>
+                                    <span>Integrated payment methods and implemented hardware capabilities directly in the app, improving transaction efficiency.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-2"></i>
+                                    <span>Deployed customer web apps to Google Cloud Platform, performing DNS setup, which reduced deployment time by 90%.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience 3 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 top-0 w-6 h-6 rounded-full bg-primary-600 dark:bg-primary-400 border-4 border-white dark:border-gray-800"></div>
+                        <div class="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 fade-in">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">Mobile Application Developer</h3>
+                                <span class="text-primary-600 dark:text-primary-400 font-medium">Mar 2020 - Jul 2021</span>
+                            </div>
+                            <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4">Alamdar Software</h4>
+                            <ul class="space-y-3 text-gray-600 dark:text-gray-400">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-2"></i>
+                                    <span>Created and maintained Android applications using Java and Kotlin, implementing modern design patterns and best practices.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-2"></i>
+                                    <span>Collaborated with cross-functional teams to define, design, and ship new features.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-2"></i>
+                                    <span>Optimized application performance and reduced crash rates by implementing robust error handling and testing procedures.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 bg-white dark:bg-gray-900">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Get In Touch</h2>
+                    <div class="w-20 h-1 bg-primary-600 dark:bg-primary-400 mx-auto mt-4"></div>
+                </div>
+                <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-md">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="p-3 bg-primary-100 dark:bg-gray-700 rounded-lg mr-4">
+                                    <i class="fas fa-envelope text-primary-600 dark:text-primary-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-700 dark:text-gray-300">Email</h4>
+                                    <a href="mailto:qadri.tahreem@gmail.com" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" onclick="handleEmailClick(event)">qadri.tahreem@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="p-3 bg-primary-100 dark:bg-gray-700 rounded-lg mr-4">
+                                    <i class="fas fa-phone-alt text-primary-600 dark:text-primary-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-700 dark:text-gray-300">Phone</h4>
+                                    <a href="tel:+919596093722" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" onclick="handlePhoneClick(event)">+91-9596093722</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="p-3 bg-primary-100 dark:bg-gray-700 rounded-lg mr-4">
+                                    <i class="fas fa-map-marker-alt text-primary-600 dark:text-primary-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-700 dark:text-gray-300">Location</h4>
+                                    <p class="text-gray-600 dark:text-gray-400">India</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8 flex space-x-4">
+                            <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-200 dark:bg-gray-700 rounded-full text-gray-700 dark:text-gray-300 hover:bg-primary-600 hover:text-white transition-colors">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-200 dark:bg-gray-700 rounded-full text-gray-700 dark:text-gray-300 hover:bg-primary-600 hover:text-white transition-colors">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-200 dark:bg-gray-700 rounded-full text-gray-700 dark:text-gray-300 hover:bg-primary-600 hover:text-white transition-colors">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-md">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">Send Me a Message</h3>
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white transition-colors" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white transition-colors" required>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
+                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white transition-colors" required></textarea>
+                            </div>
+                            <button type="submit" class="w-full px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-colors shadow-md hover:shadow-lg">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-100 dark:bg-gray-800 py-8 border-t border-gray-200 dark:border-gray-700">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-4 md:mb-0">
+                        <p class="text-gray-600 dark:text-gray-400">&copy; <span id="current-year"></span> Mohammad Tahreem Qadri. All rights reserved.</p>
+                    </div>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" onclick="handleNavigation(event, 'about')">About</a>
+                        <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" onclick="handleNavigation(event, 'experience')">Experience</a>
+                        <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" onclick="handleNavigation(event, 'contact')">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Handle navigation
+        function handleNavigation(event, sectionId) {
+            event.preventDefault();
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+            
+            // Close mobile menu if open
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu.classList.contains('hidden') === false) {
+                mobileMenu.classList.add('hidden');
+            }
+        }
+
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Handle email click
+        function handleEmailClick(event) {
+            event.preventDefault();
+            window.location.href = 'mailto:qadri.tahreem@gmail.com';
+        }
+
+        // Handle phone click
+        function handlePhoneClick(event) {
+            event.preventDefault();
+            window.location.href = 'tel:+919596093722';
+        }
+
+        // Handle contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the form data to a server
+            // For this example, we'll just show an alert
+            alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon.`);
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        
+        // Check for saved theme preference or use system preference
+        const currentTheme = localStorage.getItem('theme') || 
+                            (prefersDarkScheme.matches ? 'dark' : 'light');
+        
+        if (currentTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        
+        themeToggle.addEventListener('click', function() {
